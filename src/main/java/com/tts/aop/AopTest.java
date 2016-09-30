@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -14,17 +15,15 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
-/**
- * Created by mike on 2016/9/29.
- */
 @Aspect
 @Component
+
 public class AopTest {
     private Logger logger = Logger.getLogger(getClass());
     /**
      * 定义一个切入点
      */
-    @Pointcut("execution(public * com.tts.controller..*.*(..))")
+    @Pointcut(value = "execution(* com.tts.controller..*.*(..))")
     public void webLog(){}
 
     @Before("webLog()")
