@@ -11,5 +11,6 @@ import scala.beans.BeanProperty
 @Service
 class DemoService {
   @Value("properties of other Class")
+  @BeanProperty
   var another:String = null
 }
