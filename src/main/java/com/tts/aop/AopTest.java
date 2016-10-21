@@ -15,9 +15,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
 
-@Aspect
-@Component
-
+//@Aspect
+//@Component
 public class AopTest {
     private Logger logger = Logger.getLogger(getClass());
     /**

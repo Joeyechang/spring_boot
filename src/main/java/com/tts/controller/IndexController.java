@@ -10,9 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     String index(Model model){
         model.addAttribute("name", "TestName");
+        System.out.println("-------------------------------------");
         return "index";
     }
 }

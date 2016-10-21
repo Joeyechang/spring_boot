@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://code.jquery.com/jquery-1.11.3.js" ></script>
+    <script>
+        $(function () {
+            $("#btn").click(function(){
+                $.ajax({
+                    url: "/async",
+                    success: function( result ) {
+                        $( "p" ).html( "<strong>" + result + "</strong>" );
+                    }
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+<p th:text="'Hello, ' + ${name} + '!'" />
+<button id="btn">async</button>
+<p>result</p>
+</body>
+</html>

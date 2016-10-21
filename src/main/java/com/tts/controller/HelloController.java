@@ -9,11 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.swing.*;
 @RestController
-public class HomeController {
+public class HelloController {
 
     @ResponseBody
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     String home(@RequestParam String name){
         return "Hello " + name;
     }
+
+    @ResponseBody
+    @RequestMapping(value = "/async")
+    String async(){ return "success";}
 }
