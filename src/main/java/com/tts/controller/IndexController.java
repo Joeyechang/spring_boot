@@ -13,7 +13,7 @@ public class IndexController {
     @RequestMapping("/")
     String index(Model model){
         model.addAttribute("name", "TestName");
-        System.out.println("-------------------------------------");
+        System.out.println("-----------------");
         return "index";
     }
 }
