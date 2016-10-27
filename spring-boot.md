@@ -97,3 +97,24 @@ Spring 事件要遵循下列流程：
 - 定义事件监听器，实现 ApplicationListener。
 - 使用窗口发布事件。
 
+# 第3章 Spring 高级话题
+## 3.1 Spring Aware
+Spring 的依赖注入的最大亮点就是你所有的 Bean对 Spring 容器的存在是没有意识的。如果你需要使用 Spring 容器的功能资源，注入的 Bean 必须要意识到 Spring 窗口的存在，这就是所谓的 Spring Aware。
+ 
+表 3-1 Spring 提供的Aware 接口
+
+|  Aware   |   功能  |
+| --- | --- |
+|  BeanNameAware   |   获得窗口中 Bean 的名称  |
+|  BeanFactoryAware   |  获得当前 Bean Factory，这样可以调用窗口的服务   |
+|  ApplicationContextAware*   | 获得当前的Application Context，这样可以调用窗口的服务    |
+|  MessgeSourceAware   |  获得Message Source，这样可以获得文本信息   |
+|  ApplicationEventPublisherAware   | 应用时间发布器，可以发布事件，2.5 节中有例子    |
+|  ResourcesLoaderAware   |  获得资源加载器，可以获得外部资源文件   |
+
+
+# 第4章 Spring MVC 基本配置
+
+# 第5章 Spring Boot 基础
+## 5.1 概述
+
