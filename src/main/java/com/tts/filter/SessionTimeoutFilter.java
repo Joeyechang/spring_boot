@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * Created by phoenix on 2016/10/19.
  */
-@WebFilter(urlPatterns = "/*", filterName = "FilterAll")
+@WebFilter(urlPatterns = "/hello", filterName = "FilterHello")
 @Component
 public class SessionTimeoutFilter extends OncePerRequestFilter {
     private static Log log = LogFactory.getLog(SessionTimeoutFilter.class);
