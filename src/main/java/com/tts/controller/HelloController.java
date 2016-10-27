@@ -5,16 +5,18 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import javax.swing.*;
-@RestController
+@Controller
 public class HelloController {
 
-    @ResponseBody
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    String home(@RequestParam String name){
-        return "Hello " + name;
+    @RequestMapping(value = "/hello")
+    String home(@RequestParam String name, Model model){
+        model.addAttribute("name", name);
+        System.out.println("============== hello ==========");
+        return "hello";
     }
 
     @ResponseBody
