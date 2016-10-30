@@ -28,11 +28,11 @@ public class AopTest {
         HttpServletRequest request = attributes.getRequest();
 
         // 记录下请求内容
-        logger.info("URL : " + request.getRequestURL().toString());
+/*        logger.info("URL : " + request.getRequestURL().toString());
         logger.info("HTTP_METHOD : " + request.getMethod());
         logger.info("IP : " + request.getRemoteAddr());
         logger.info("CLASS_METHOD : " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
-        logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));
+        logger.info("ARGS : " + Arrays.toString(joinPoint.getArgs()));*/
     }
     @AfterReturning(returning = "ret", pointcut = "webLog()")
     public void doAfterReturning(Object ret) throws Throwable {

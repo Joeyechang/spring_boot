@@ -1,4 +1,4 @@
-package springboot.chapter2.beanBuilds;
+package springboot.chapter2.beanBuilds_3;
 
 
 /**

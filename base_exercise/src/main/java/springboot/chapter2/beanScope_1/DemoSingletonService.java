@@ -1,4 +1,4 @@
-package springboot.chapter2.beanScope;
+package springboot.chapter2.beanScope_1;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package springboot.chapter2.beanScope;
+package springboot.chapter2.beanScope_1;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,4 +1,4 @@
-package springboot.chapter2.el;
+package springboot.chapter2.el_2;
 
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
@@ -19,8 +19,8 @@ import java.io.IOException;
  * Created by mike on 2016/10/26.
  */
 @Configuration
-@ComponentScan("springboot.chapter2.el")
-@PropertySource("classpath:springboot/chapter2/el/test.properties")
+@ComponentScan("springboot.chapter2.el_2")
+@PropertySource("classpath:springboot/chapter2/el_2/test.properties")
 public class ElConfig {
     private static Logger logger = LoggerFactory.getLogger(ElConfig.class);
     @Value("I Love you")

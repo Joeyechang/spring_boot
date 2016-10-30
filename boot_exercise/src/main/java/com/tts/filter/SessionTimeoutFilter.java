@@ -22,9 +22,9 @@ public class SessionTimeoutFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        log.info("is Async Dispatch:" + isAsyncDispatch(request));
+        /*log.info("is Async Dispatch:" + isAsyncDispatch(request));
         log.info("is Async Started:" + isAsyncStarted(request));
-        log.info("shouldNotFilter:" + shouldNotFilter(request));
+        log.info("shouldNotFilter:" + shouldNotFilter(request));*/
         filterChain.doFilter(request, response);
     }
 }

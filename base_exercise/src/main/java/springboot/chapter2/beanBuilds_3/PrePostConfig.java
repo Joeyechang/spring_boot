@@ -1,4 +1,4 @@
-package springboot.chapter2.beanBuilds;
+package springboot.chapter2.beanBuilds_3;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
  * Created by mike on 2016/10/26.
  */
 @Configuration
-@ComponentScan("springboot.chapter2.beanBuilds")
+@ComponentScan("springboot.chapter2.beanBuilds_3")
 public class PrePostConfig {
 
     @Bean(initMethod = "init", destroyMethod = "destroy")

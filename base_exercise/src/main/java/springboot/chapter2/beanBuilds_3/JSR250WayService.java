@@ -1,4 +1,4 @@
-package springboot.chapter2.beanBuilds;
+package springboot.chapter2.beanBuilds_3;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

@@ -1,4 +1,4 @@
-package springboot.chapter2.el;
+package springboot.chapter2.el_2;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
