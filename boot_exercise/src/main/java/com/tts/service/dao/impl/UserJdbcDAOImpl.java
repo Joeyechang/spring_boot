@@ -20,7 +20,7 @@ public class UserJdbcDAOImpl implements UserJdbcDAO {
     @Resource
     protected NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 
-    static String findSql = "SELECT id, name FROM users WHERE id = :id";
+    static String findSql = "SELECT id, username FROM users WHERE id = :id";
 
     @Override
     public User findOne(int id) {
