@@ -1,5 +1,0 @@
-╭╩═╮  ╔════╗╔════╗╔════╗╔════╗╔════╗
-╭╯GO　╠╣ Spring ╠╣  Boot  ╠╣  1.4.1 ╠╣Version ╠╣ Start
-╰⊙═⊙╯╚◎══◎╝╚◎══◎╝╚◎══◎╝╚◎══◎╝╚◎══◎╝
-${spring-boot.version}
-${application.version}

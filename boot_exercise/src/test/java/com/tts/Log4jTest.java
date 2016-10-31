@@ -11,7 +11,10 @@ public class Log4jTest {
 	final static Log log = LogFactory.getLog(Log4jTest.class);
 	@Test
 	public void test(){
-		logger.info("This is {} output the logs!","sl4j");
+		logger.debug("This is a debug message");
+		logger.info("This is an info message");
+		logger.warn("This is a warn message");
+		logger.error("This is an error message");
 	}
 
 }

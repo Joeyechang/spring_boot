@@ -1,6 +1,5 @@
 package com.tts.aop;
 
-import org.apache.log4j.Logger;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Before;
@@ -14,7 +13,7 @@ import java.util.Arrays;
 //@Aspect
 //@Component
 public class AopTest {
-    private Logger logger = Logger.getLogger(getClass());
+//    private Logger logger = Logger.getLogger(getClass());
     /**
      * 定义一个切入点
      */
@@ -37,7 +36,7 @@ public class AopTest {
     @AfterReturning(returning = "ret", pointcut = "webLog()")
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
-        logger.info("RESPONSE : " + ret);
+//        logger.info("RESPONSE : " + ret);
     }
 
 }
