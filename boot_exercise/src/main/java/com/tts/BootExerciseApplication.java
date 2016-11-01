@@ -19,10 +19,12 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
+import org.springframework.test.context.ActiveProfiles;
 
 //@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
 @SpringBootApplication
 //@ServletComponentScan
+
 public class BootExerciseApplication {
     public static void main(String[] args) {
         SpringApplication.run(BootExerciseApplication.class, args);
