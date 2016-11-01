@@ -7,6 +7,7 @@ import com.tts.service.dao.UserRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+//@DataJpaTest
 public class UserServiceTests {
 
     @Resource
@@ -48,13 +50,13 @@ public class UserServiceTests {
     }
     @Test
     public void findByNameAndSortTest(){
-        List<User> list = userRepository.findByUsernameAndSort("test", new Sort(Sort.Direction.DESC, "name"));
+        List<User> list = userRepository.findByUsernameAndSort("leongfeng", new Sort(Sort.Direction.DESC, "username"));
         list.stream().map(user -> user.getUsername()).forEach(System.out::println);
     }
 
     @Test
     public void findOneByNameTest(){
-        List<User> list = userRepository.findOneByUsername("test", new PageRequest(0,1));
+        List<User> list = userRepository.findOneByUsername("leongfeng", new PageRequest(0,1));
         list.stream().map(user -> user.getUsername()).forEach(System.out::println);
     }
 }

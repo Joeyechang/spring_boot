@@ -7,5 +7,5 @@ import com.tts.entiy.User;
  * Create Date: 2016/10/27
  */
 public interface UserJdbcDAO {
-    public User findOne(int id);
+    User findOne(int id);
 }

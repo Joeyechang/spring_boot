@@ -18,18 +18,18 @@ public interface UserRepository extends JpaRepository<User, Long> {
      * @param id
      * @return
      */
-    public User findById(int id);
+    User findById(Integer id);
 
     @Query(value = "SELECT u FROM User u WHERE username = ?1")
-    public User findByUsername(String username);
+    User findByUsername(String username);
 
     @Query(value = "SELECT u FROM User u WHERE username like :username%")
-    public List<User> findByUsernameLike(@Param("username") String username);
+    List<User> findByUsernameLike(@Param("username") String username);
 
     @Query(value = "SELECT u FROM User u WHERE username like ?1%")
-    public List<User> findByUsernameAndSort(String username, Sort sort);
+    List<User> findByUsernameAndSort(String username, Sort sort);
 
     @Query(value = "SELECT u FROM User u WHERE username like ?1%")
-    public List<User> findOneByUsername(String username, Pageable pageable);
+    List<User> findOneByUsername(String username, Pageable pageable);
 
 }

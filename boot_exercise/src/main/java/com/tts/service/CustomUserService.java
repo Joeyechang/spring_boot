@@ -7,13 +7,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import javax.annotation.Resource;
 import java.util.Objects;
 
 /**
  * Created by mike on 2016/10/31.
  */
 public class CustomUserService implements UserDetailsService {
-    @Autowired
+    @Resource
     UserRepository userRepository;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
