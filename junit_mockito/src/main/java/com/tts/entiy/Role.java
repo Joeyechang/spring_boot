@@ -17,6 +17,11 @@ public class Role {
     Integer id;
     String name;
 
+    public Role(Integer id,String name) {
+        this.name = name;
+        this.id = id;
+    }
+
     public Integer getId() {
         return id;
     }

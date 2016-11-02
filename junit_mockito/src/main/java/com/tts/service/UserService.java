@@ -11,7 +11,6 @@ import javax.transaction.Transactional;
 public class UserService {
     @Resource
     private UserDAO userDAO;
-
     @Transactional
     public void save(User user) {
         userDAO.save(user);
