@@ -28,7 +28,7 @@ public class FileController {
     public String upload( String filename) throws Exception {
         System.out.println(filename);
 //        File feefile = feedFile.getFile();
-//        File feedfile = new File("e:\\feedfile.txt");
+//        File feedfile = new File("feedfile.txt");
 //        FileUtils.writeByteArrayToFile(feedfile, file.getBytes());
 //        FileUtils.copyFile(feedFile.getFile(), new File("e:\\feedfile2"));
         return "success";

@@ -35,7 +35,8 @@ public class SampleTest {
        // list.get(1);
 
         // 没有返回值的方法
-        doNothing().doThrow(new RuntimeException("void exception")).when(list).clear();
+//        doNothing().doThrow(new RuntimeException("void exception")).when(list).clear();
+        doNothing().when(list).clear();
         list.clear();
     }
 

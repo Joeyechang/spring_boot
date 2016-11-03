@@ -30,29 +30,30 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import org.springframework.test.web.servlet.result.*;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles(value = "test")
 @WebMvcTest(HelloController.class)
 //@ContextConfiguration(classes = ControllerTests.class)
 public class ControllerTests {
 
-	@Autowired
+    @Autowired
     private MockMvc mvc;
 
     @MockBean
     UserRepository userRepository;
-	
-	@Test
-	public void indexTest() throws Exception{
-		mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON).param("name","scala"))
-		.andExpect(status().isOk())
-		.andExpect(view().name("hello"));
-		//.andExpect(content().string(equalTo("index")));
-	}
 
-	@Test
-    public void asyncTest() throws Exception{
+    @Test
+    public void indexTest() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/hello").accept(MediaType.APPLICATION_JSON).param("name", "scala"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("hello"));
+        //.andExpect(content().string(equalTo("index")));
+    }
+
+    @Test
+    public void asyncTest() throws Exception {
         mvc.perform(MockMvcRequestBuilders.get("/async")).andExpect(status().isOk()).andExpect(content().string("success"));
     }
-	
+
 }
