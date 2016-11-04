@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 @RunWith(SpringRunner.class)
 @WebMvcTest(HelloController.class)
-public class HelloControllerTest extends BaseTest {
+public class HelloControllerTest extends BaseControllerTest {
 //    @Autowired
 //    private MockMvc mvc;
     /**
