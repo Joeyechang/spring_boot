@@ -22,7 +22,6 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 public class BaseTest {
     @Autowired
     private WebApplicationContext context;
-
     @Autowired
     private MockMvc mvc;
 
