@@ -1,11 +1,18 @@
 package com.tts.entiy;
 
+import javax.persistence.Entity;
+
 /**
  * Created by mike on 2016/11/2.
  */
+
 public class Person {
-    private final Integer personID;
-    private final String personName;
+    private Integer personID;
+    private String personName;
+
+    public Person(){
+
+    }
 
     public Person(Integer personID, String personName) {
         this.personID = personID;

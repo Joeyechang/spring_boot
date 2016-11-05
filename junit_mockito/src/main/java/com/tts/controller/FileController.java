@@ -15,10 +15,11 @@ public class FileController {
 
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public String saveAuto(@RequestPart(value = "json") JsonPojo pojo, @RequestParam(value = "some-random") String random,
-                           @RequestParam(value = "data", required = true) List<MultipartFile> files) {
+                           @RequestParam(value = "data", required = true) List<MultipartFile> files, @RequestBody Role role) {
         System.out.println("random:" + random);
         System.out.println("pojo:" + pojo.getJson());
         files.forEach(file -> System.out.println("filename: " + file.getOriginalFilename()));
+        System.out.println("role" + role.toString());
         return "success";
     }
 

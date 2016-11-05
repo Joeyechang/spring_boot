@@ -1,5 +1,6 @@
 package com.tts.controller;
 
+import com.tts.entiy.Role;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.junit.After;
@@ -8,6 +9,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -24,9 +26,7 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /** 
 * FileController Tester. 
@@ -37,7 +37,7 @@ import java.util.List;
 */
 @RunWith(SpringRunner.class)
 @WebMvcTest(FileController.class)
-public class FileControllerTest {
+public class FileControllerTest extends BaseControllerTest{
     @Autowired
     private WebApplicationContext context;
     @Autowired
@@ -62,9 +62,19 @@ public class FileControllerTest {
         MockMultipartFile secondFile = new MockMultipartFile("data", "other-file-name.data", "text/plain", "some other type".getBytes());
         MockMultipartFile jsonFile = new MockMultipartFile("json", "", "application/json", "{\"json\": \"someValue\"}".getBytes());
         mockMvc.perform(MockMvcRequestBuilders.fileUpload("/upload").file(firstFile).file(secondFile).file(jsonFile)
-                .param("some-random","4")).andExpect(status().is(200)).andExpect(content().string("success"));
+                .param("random", "4")).andExpect(status().is(200)).andExpect(content().string("success"));
         System.out.println("=====================");
         files(firstFile, secondFile);
+    }
+
+    @Test
+    public void testSaveAutoByBase() throws Exception {
+        MockMultipartFile firstFile = new MockMultipartFile("data", "filename.txt", "text/plain","mock file test".getBytes());
+//        FileUtils.writeByteArrayToFile(new File("file.txt"), firstFile.getBytes());
+        MockMultipartFile secondFile = new MockMultipartFile("data", "other-file-name.data", "text/plain", "some other type".getBytes());
+        MockMultipartFile jsonFile = new MockMultipartFile("json", "", "application/json", "{\"json\": \"someValue\"}".getBytes());
+        MockHttpServletResponse msr = doFileUpload("/upload?some-random=4", new Role(1,"test"), firstFile, secondFile, jsonFile);
+        System.out.println("result: " + msr.getContentAsString());
     }
 
     public void files(MockMultipartFile ... files){
