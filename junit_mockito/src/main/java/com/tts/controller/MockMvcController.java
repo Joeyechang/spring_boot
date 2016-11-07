@@ -13,6 +13,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * Created by mike on 2016/11/5.
  */
@@ -72,6 +75,12 @@ public class MockMvcController {
         List<Role> roles = roleRepository.findAll();
         logger.info("Roles Size: {}", roles.size());
         return SUCCESS;
+    }
+    
+    @RequestMapping(value = "/http", method = RequestMethod.POST)
+    String http(HttpServletRequest request, HttpServletResponse rsponse){
+    	logger.info("Request RemoteAddr: {};", request.getRemoteAddr());
+    	return SUCCESS;
     }
 
 }

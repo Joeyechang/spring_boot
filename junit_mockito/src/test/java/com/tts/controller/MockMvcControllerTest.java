@@ -86,4 +86,12 @@ public class MockMvcControllerTest {
                 .andExpect(status().is(200))
                 .andExpect(content().string("success"));
     }
+    
+    @Test
+    public void testHttp() throws Exception{
+    	mockMvc.perform(post("/mock/http").with(request -> {
+    		request.setRemoteAddr("192.168.0.1");
+    		return request;
+    	}));
+    }
 }
