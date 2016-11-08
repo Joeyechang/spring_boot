@@ -2,7 +2,6 @@ package com.tts.service;
 
 import com.tts.entiy.User;
 import com.tts.service.dao.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

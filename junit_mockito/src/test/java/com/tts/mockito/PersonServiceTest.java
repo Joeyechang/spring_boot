@@ -3,7 +3,6 @@ import com.tts.entiy.Person;
 import com.tts.service.PersonService;
 import com.tts.service.dao.PersonDAO;
 import org.junit.*;
-import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
