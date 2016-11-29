@@ -1,16 +1,23 @@
 package com.search.dataBean;
 
+import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldIndex;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import static sun.plugin.javascript.navig.JSType.Document;
+
 /**
  * @author phoenix
  * @since 2016/11/29
  */
-@Document(indexName = "searchBook", type = "article")
+@Document(indexName = "book", type = "article")
+@Builder
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Article {
 
     @Id
