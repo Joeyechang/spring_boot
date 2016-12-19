@@ -25,7 +25,7 @@ public class ElasticsearchExerciseApplicationTests {
     public void testList(){
         Iterable<Article> list = articleRepository.findAll();
         for (Article article : list) {
-            System.out.println(article.getContent());
+            System.out.println("===========" + article.getContent());
         }
     }
 

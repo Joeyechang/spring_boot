@@ -42,8 +42,7 @@ public class JcifsTest {
     public void testWrite() {
         Path path = Paths.get("e:\\feedfile.txt");
         try (InputStream is = Files.newInputStream(path)) {
-            SmbNamedPipe pipe = new SmbNamedPipe(REMOTE_CONFIG + "feedfile.txt",
-                    SmbNamedPipe.PIPE_TYPE_RDWR | SmbNamedPipe.PIPE_TYPE_CALL);
+            SmbNamedPipe pipe = new SmbNamedPipe(REMOTE_CONFIG + "feedfile.txt", SmbNamedPipe.PIPE_TYPE_RDWR | SmbNamedPipe.PIPE_TYPE_CALL);
             OutputStream os = pipe.getOutputStream();
             IOUtils.copy(is, os);
         } catch (IOException e) {

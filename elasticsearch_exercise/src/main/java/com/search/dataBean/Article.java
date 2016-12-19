@@ -7,7 +7,6 @@ import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldIndex;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import static sun.plugin.javascript.navig.JSType.Document;
 
 /**
  * @author phoenix
