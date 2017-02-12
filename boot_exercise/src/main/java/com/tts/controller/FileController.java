@@ -16,11 +16,12 @@ import java.io.*;
  * Create Date: 2016/11/2
  */
 @Controller
+@RequestMapping("/file/*")
 public class FileController {
 
-    @RequestMapping("/file")
-    public String file(){
-        return "file";
+    @RequestMapping("/test")
+    public String test(){
+        return "test";
     }
 
     @RequestMapping("/upload")
