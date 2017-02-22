@@ -26,7 +26,6 @@ import com.tts.repository.MapBackedRepository;
 import io.swagger.annotations.*;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -42,8 +41,8 @@ public class PetController {
 
   PetRepository petData = new PetRepository();
 
-  @RequestMapping(value = "/{petId}", method = GET)
-  @ApiOperation(
+    @RequestMapping(value = "/{petId}", method = GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @ApiOperation(
           value = "Find pet by ID", notes = "Returns a pet when ID < 10. ID > 10 or nonintegers will simulate API " +
           "error conditions",
           response = Pet.class,
@@ -62,7 +61,6 @@ public class PetController {
           @PathVariable("petId") String petId)
           throws NotFoundException {
     Pet pet = petData.get(Long.valueOf(petId));
-      System.out.println(pet.getId() + " " + pet.getName());
     if (null != pet) {
       return Responses.ok(pet);
     } else {
