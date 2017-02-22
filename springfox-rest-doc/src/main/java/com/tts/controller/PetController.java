@@ -42,7 +42,7 @@ public class PetController {
 
   PetRepository petData = new PetRepository();
 
-  @RequestMapping(value = "/{petId}", method = GET, produces = MediaType.APPLICATION_JSON_VALUE)
+  @RequestMapping(value = "/{petId}", method = GET)
   @ApiOperation(
           value = "Find pet by ID", notes = "Returns a pet when ID < 10. ID > 10 or nonintegers will simulate API " +
           "error conditions",
