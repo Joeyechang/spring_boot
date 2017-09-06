@@ -23,18 +23,17 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootApplication
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class, ManagementWebSecurityAutoConfiguration.class})
 //@SpringBootApplication
-//@ServletComponentScan
-
+//@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class, ManagementWebSecurityAutoConfiguration.class})
+@SpringBootApplication
+@ServletComponentScan
 public class BootExerciseApplication {
     public static void main(String[] args) {
         SpringApplication.run(BootExerciseApplication.class, args);
-//        SpringApplication app = new SpringApplication(BootExerciseApplication.class);
-//        app.setBannerMode(Banner.Mode.OFF);
-//        app.run(args);
-//        new SpringApplicationBuilder(BootExerciseApplication.class).bannerMode(Banner.Mode.OFF).run(args);
+        SpringApplication app = new SpringApplication(BootExerciseApplication.class);
+        app.setBannerMode(Banner.Mode.OFF);
+        app.run(args);
+        new SpringApplicationBuilder(BootExerciseApplication.class).bannerMode(Banner.Mode.OFF).run(args);
     }
     /*@Bean
     public EmbeddedServletContainerFactory servletContainer(){
